@@ -2,9 +2,17 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
 //import { Redirect } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 //import Profile from './components/Profile.jsx';
 import Host from './Host.jsx';
+import HostPage from './HostPage.jsx';
+import SendMessage from './SendMessage.jsx';
 import {GlobalStyle} from './styledComponents.jsx'
 
 
@@ -16,7 +24,6 @@ class App extends React.Component {
       host: null
     }
 
-    this.changeToHostView = this.changeToHostView.bind(this);
     this.renderShortDesc = this.renderShortDesc.bind(this);
     this.fetchData = this.fetchData.bind(this);
 
@@ -51,36 +58,27 @@ class App extends React.Component {
 
   }
 
-  changeToHostView(host) {
-    // this.setState({
-    //   redirect: "/host-details-page",
-    //   host: host
-    // });
-  }
-
-  renderView() {
-    const {host} = this.state;
-
-    if (host) {
-      return <Host host={this.state.host} onClick={(host) => this.changeToHostView(host)} />
-    }
-    // if (this.state.redirect) {
-    //   return <Redirect to={this.state.redirect} />
-    // }
-  }
 
   render() {
 
     // console.log('rhdjfgj', this.state);
     return (
-      <div>
+      <div className="main">
         <GlobalStyle />
-        <div className="main">
-          {this.renderView()}
-        </div>
+        { this.state.host &&
 
-
-
+        <Switch>
+          <Route exact path='/:id'>
+           <Host host={this.state.host} propertyId={this.props.id}/>
+         </Route>
+         <Route path='/:id/host-details/:id'>
+          <HostPage host={this.state.host} />
+          </Route>
+          <Route path='/:id/send-message'>
+          <SendMessage host={this.state.host} />
+          </Route>
+        </Switch>
+  }
       </div>
     )
   }

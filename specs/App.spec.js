@@ -37,30 +37,30 @@ describe('App component', function() {
 
   });
 
-  // it('should get data', async () => {
-  //   const ajaxSpy = jest.spyOn($, 'ajax');
-  //   const wrapper = shallow(<App id='1003' />);
-  //   wrapper.instance().fetchData('1003');
-  //   expect(wrapper.state().host).toBe({
-  //             id: 3,
-  //             name: 'Tribe',
-  //             description: 'Tribe is a lifestyle brand, here to bring the most refined properties in the city.',
-  //             reviews: 127,
-  //             verified: true,
-  //             superhost: false,
-  //             coHost: [2],
-  //             joined_at: '2019-11-18T05:05:26.037Z',
-  //             languages: 'English',
-  //             responseTime: 'within an hour',
-  //             responseRate: 92,
-  //             location: 'San Jose, CA',
-  //             avatarUrl: 'http://localhost:3001/assets/avatars/3.jpg'
-  //           });
+  it('should get data', async () => {
+    const ajaxSpy = jest.spyOn($, 'ajax');
+    const wrapper = shallow(<App id='1003' />);
+    wrapper.instance().fetchData('1003');
+    expect(wrapper.state().host).toBe({
+              id: 3,
+              name: 'Tribe',
+              description: 'Tribe is a lifestyle brand, here to bring the most refined properties in the city.',
+              reviews: 127,
+              verified: true,
+              superhost: false,
+              coHost: [2],
+              joined_at: '2019-11-18T05:05:26.037Z',
+              languages: 'English',
+              responseTime: 'within an hour',
+              responseRate: 92,
+              location: 'San Jose, CA',
+              avatarUrl: 'http://localhost:3001/assets/avatars/3.jpg'
+            });
     // expect(ajaxSpy).toBeCalledWith({
     //   type: 'GET',
     //   url: 'http://localhost:3001/listings/1003/hosts',
     //   error: ['renderShortDesc'],
-    //   success: [Function error]
+    //   success: null
 
     // });
   });

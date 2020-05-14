@@ -28,8 +28,16 @@ body {
 .checked {
   color: rgb(255, 102, 102);
 }
+.avatar {
+  margin-left: 50px;
+}
+.desc-host-details {
+  padding-left: 100px;
+  width: 65%;
+}
 
 `
+
 export const Info = styled.div`
 padding-top: 5px;
 padding-bottom: 5px;
@@ -134,7 +142,41 @@ padding-top: 10px;
 padding-bottom: 5px;
 align-items: center;
 width: 50%;
-
-
 `
+export const ContactTextarea = styled.input`
+margin-top: 40px;
+padding-top: 20px;
+padding-bottom: 21px;
+width: 45%;
+font: 400 13.3333px Arial;
+`
+export const MessageStyle = styled.div`
+margin-top: 100px;
+
+* {
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+`
+export const Message = styled.input`
+display: block;
+margin-top: 30px;
+cursor: pointer;
+font-size: 16px;
+line-height: 24px;
+padding-top: 10px;
+padding-bottom: 10px;
+font-weight: 700;
+padding-left: 22px;
+padding-right: 22px;
+color: rgb(255, 255, 255);
+border-radius: 6px;
+background: rgb(0, 132, 137);
+border-color: transparent;
+`
+
+
+
+
+
 

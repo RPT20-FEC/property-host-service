@@ -1,4 +1,12 @@
 import React, { useState } from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import HostPage from './HostPage.jsx';
+import App from './App.jsx';
 var moment = require('moment');
 
 
@@ -13,15 +21,23 @@ import {
 const Profile = (props) => (
   <div>
      <Top>
-    <Avatar>
-      <Image className='photo' src={props.url} />
-      {props.superhost &&
-      <Icon className='icon' src='http://localhost:3001/assets/icon.png' />
-      }
-    </Avatar>
+
+       <Avatar>
+         <Link to={`${props.propertyId}/host-details/${props.host.id}`}>
+
+         <Image className='photo' src={props.host.avatarUrl} />
+         {props.host.superhost &&
+         <Icon className='icon' src='http://localhost:3001/assets/icon.png' />
+         }
+         </Link>
+
+       </Avatar>
+
+
+
     <Title>
-    <Name className='host-name' >Hosted by {props.name}</Name>
-    <Date className='date-joined' >Joined in {moment(props.date).format("MMMM YYYY")}</Date>
+    <Name className='host-name' >Hosted by {props.host.name}</Name>
+    <Date className='date-joined' >Joined in {moment(props.host.date).format("MMMM YYYY")}</Date>
 
     </Title>
     </Top>

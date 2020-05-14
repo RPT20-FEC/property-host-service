@@ -47,14 +47,14 @@ app.get('/hosts', function(req, res, next = () => {}) {
     next();
   })
 });
-app.get('/:id', (req, res) => {
-  res.sendFile(path.join(__dirname + '/../public/index.html'));
 
+app.get('/favicon.ico', (req, res) => {
+  res.sendFile(path.join(__dirname + '/../public/assets/logo.png'));
 });
 
+
+
 app.get('/listings/:id/hosts', function(req, res, next = () => {}) {
-  // call listing service API to get host id associated with the listing id in the url
-  // query the db or call my own api to get host data with host id
 
   axios.get(`http://localhost:3005/listings/${req.params.id}`)
   .then(data => {
@@ -69,13 +69,6 @@ app.get('/listings/:id/hosts', function(req, res, next = () => {}) {
   .catch(err =>{
     console.error('Failed', err);
   });
-  // Hosts.find({id: Math.round(Math.random() * 100)}).exec((err, data) => {
-  //   if (err) {
-  //     return console.error(err);
-  //   }
-  //   res.status(200).json(data[0]);
-  //   next();
-  // })
 
 });
 
@@ -83,6 +76,12 @@ app.get('/assets/:id', (req, res) => {
   res.sendFile(path.join(__dirname + '/../public/assets/' + req.params.id));
 });
 
+app.get('/:id', (req, res) => {
+  res.sendFile(path.join(__dirname + '/../public/index.html'));
+});
+app.get('/:id/host-details/:id', (req, res) => {
+  res.sendFile(path.join(__dirname + '/../public/index.html'));
+});
 
 
 

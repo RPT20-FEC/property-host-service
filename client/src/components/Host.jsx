@@ -2,11 +2,13 @@ import React, { useState } from "react";
 import Description from './Description.jsx';
 import Profile from './Profile.jsx';
 import Stats from './Stats.jsx';
-
+import {
+  Link
+} from "react-router-dom";
 
 
 import {
-  Bold, Info, ContactHost, Note, NoteIcon
+  Bold, Info, ContactHost, Note, NoteIcon, Cols
 } from './styledComponents.jsx'
 
 
@@ -14,7 +16,7 @@ import {
 
 const Host = (props) => (
   <div>
-     <Profile url={props.host.avatarUrl} name={props.host.name} date={props.host.joined_at} superhost={props.host.superhost}/>
+     <Profile host={props.host} propertyId={props.propertyId}/>
 
     <div className='flex-container'>
     <Info>
@@ -43,7 +45,11 @@ const Host = (props) => (
     <div className='lang'>Language: {props.host.languages}</div>
     <div className='resp-rate'>Response rate: {props.host.responseRate}%</div>
     <div className='resp-time'>Response time: {props.host.responseTime}</div>
+
+    <Link to={`${props.propertyId}/send-message`}>
     <ContactHost className='contact-button'>Contact host</ContactHost>
+    </Link>
+
     <Note><NoteIcon className='payment-wrg-icon' src='http://localhost:3001/assets/paymentNote.png' /> <p className='payment-warning'>To protect your payment, never transfer money or communicate outside of the Airbnb website or app. </p> </Note>
   </Info>
 
