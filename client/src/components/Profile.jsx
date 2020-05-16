@@ -37,7 +37,7 @@ const Profile = (props) => (
 
     <Title>
     <Name className='host-name' >Hosted by {props.host.name}</Name>
-    <Date className='date-joined' >Joined in {moment(props.host.date).format("MMMM YYYY")}</Date>
+    <Date className='date-joined' >Joined in {moment(props.host.joined_at).format("MMMM YYYY")}</Date>
 
     </Title>
     </Top>

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Description from './Description.jsx';
 import Profile from './Profile.jsx';
 import Stats from './Stats.jsx';
+import CohostList from './CohostList.jsx';
 import {
   Link
 } from "react-router-dom";
@@ -23,6 +24,8 @@ const Host = (props) => (
       <Stats superhost={props.host.superhost} reviews={props.host.reviews} verified={props.host.verified}/>
 
       <Description className='desc' less={props.host.descShort} more={props.host.description}/>
+      {props.host.coHost.length>0 &&
+      <CohostList id={props.host.id} propertyId={props.propertyId} /> }
 
       {props.host.duringStay &&
       <div>

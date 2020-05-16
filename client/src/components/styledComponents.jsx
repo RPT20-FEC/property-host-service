@@ -35,6 +35,10 @@ body {
   padding-left: 100px;
   width: 65%;
 }
+.cohostAv {
+  width: 62%;
+  margin: auto;
+}
 
 `
 
@@ -173,6 +177,20 @@ color: rgb(255, 255, 255);
 border-radius: 6px;
 background: rgb(0, 132, 137);
 border-color: transparent;
+`
+
+export const ImageSmall = styled.img`
+position: relative;
+width: 70px;
+height: 80px;
+border-radius: 50%;
+`
+export const IconSmall = styled.img`
+position: absolute;
+width: 20px;
+height: 35px;
+top: 60px;
+left: 55px;
 `
 
 

@@ -52,6 +52,25 @@ app.get('/favicon.ico', (req, res) => {
   res.sendFile(path.join(__dirname + '/../public/assets/logo.png'));
 });
 
+// returns co-host data for cohost component
+app.get('/hosts/:id/co-hosts', (req, res) => {
+  let coHostData = [];
+  Hosts.find({id: req.params.id}).exec((err, data) => {
+    if (err) {
+      return console.error(err);
+    }
+
+    Hosts.find().where('id').in(data[0].coHost).select('name avatarUrl id superhost').exec((err, records) => {
+
+      if (err) {
+        return console.error(err);
+      }
+      res.status(200).json(records);
+    })
+
+  })
+});
+
 
 
 app.get('/listings/:id/hosts', function(req, res, next = () => {}) {

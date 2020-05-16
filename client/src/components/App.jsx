@@ -71,11 +71,10 @@ class App extends React.Component {
           <Route exact path='/:id'>
            <Host host={this.state.host} propertyId={this.props.id}/>
          </Route>
-         <Route path='/:id/host-details/:id'>
-          <HostPage host={this.state.host} />
-          </Route>
+         <Route path='/:listingid/host-details/:id' component={HostPage}/>
+          
           <Route path='/:id/send-message'>
-          <SendMessage host={this.state.host} />
+          <SendMessage name={this.state.host.name} responseTime={this.state.host.responseTime} />
           </Route>
         </Switch>
   }
