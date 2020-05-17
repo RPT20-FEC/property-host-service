@@ -10,7 +10,12 @@ body {
   font-family: 'Montserrat';
   font-size: 1.1em;
 }
-
+#host {
+  margin-left: 150px;
+  margin-right: 50px;
+  width: auto;
+  padding-left: 24px;
+}
 @media screen and (max-width: 600px) {
   .info {
     width: 100%;
@@ -19,34 +24,52 @@ body {
 .flex-container {
   display: flex;
 }
+
 .checked {
   color: rgb(255, 102, 102);
 }
+.avatar {
+  margin-left: 50px;
+}
+.desc-host-details {
+  padding-left: 100px;
+  width: 65%;
+}
+.cohostAv {
+  width: 62%;
+  margin: auto;
+}
 
 `
+
 export const Info = styled.div`
 padding-top: 5px;
 padding-bottom: 5px;
 width: 42%;
 padding-right: 100px;
+* {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
 `
 export const NoteIcon = styled.img`
 float: left;
 `
-export const Cols = styled.table`
-padding-bottom: 15px;
-
+export const Cols = styled.div`
+display: flex;
 `
-export const StatsData = styled.td`
-text-align: left;
+export const StatsData = styled.div`
 padding-right: 30px;
-
+padding-top: 0px;
+padding-bottom: 0px;
+* {
+  padding-right: 5px;
+  padding-bottom: 0px;
+}
 `
-
-
 export const Top = styled.div`
 padding-top: 5px;
-padding-bottom: 10px;
+padding-bottom: 0px;
 display: flex;
 `
 
@@ -68,22 +91,11 @@ background-color: white;
 border-color: rgb(34, 34, 34);
 
 `
-
-
-
-
-// /* Clear floats after the columns */
-// .row:after {
-//   content: "";
-//   display: table;
-//   clear: both;
-// }
-
-
 export const Bold = styled.div`
-font-weight: bold;
+font-weight: 600;
 padding-top: 10px;
-padding-bottom: 3px;
+padding-bottom: 4px;
+font-size: 1.11em;
 `
 export const Avatar = styled.div`
 position:relative;
@@ -93,15 +105,15 @@ padding-bottom: 10px;
 `
 export const Image = styled.img`
 position: relative;
-width: 90px;
-height: 90px;
+width: 100px;
+height: 100px;
 border-radius: 50%;
 `
 export const Icon = styled.img`
 position: absolute;
 width: 30px;
-top: 75px;
-left: 65px;
+top: 80px;
+left: 75px;
 `
 export const Title = styled.div`
 margin-top: 30px;
@@ -130,11 +142,59 @@ export const Note = styled.div`
 color: rgb(34, 34, 34);
 font-weight: 400;
 font-size: 13px;
-padding-top: 30px;
+padding-top: 10px;
 padding-bottom: 5px;
 align-items: center;
 width: 50%;
-
-
 `
+export const ContactTextarea = styled.input`
+margin-top: 40px;
+padding-top: 20px;
+padding-bottom: 21px;
+width: 45%;
+font: 400 13.3333px Arial;
+`
+export const MessageStyle = styled.div`
+margin-top: 100px;
+
+* {
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+`
+export const Message = styled.input`
+display: block;
+margin-top: 30px;
+cursor: pointer;
+font-size: 16px;
+line-height: 24px;
+padding-top: 10px;
+padding-bottom: 10px;
+font-weight: 700;
+padding-left: 22px;
+padding-right: 22px;
+color: rgb(255, 255, 255);
+border-radius: 6px;
+background: rgb(0, 132, 137);
+border-color: transparent;
+`
+
+export const ImageSmall = styled.img`
+position: relative;
+width: 70px;
+height: 80px;
+border-radius: 50%;
+`
+export const IconSmall = styled.img`
+position: absolute;
+width: 20px;
+height: 35px;
+top: 60px;
+left: 55px;
+`
+
+
+
+
+
 

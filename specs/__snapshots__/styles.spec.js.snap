@@ -1,0 +1,93 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Styles - React Styled Components Avatar image renders correctly 1`] = `
+<img
+  className="sc-AxmLO enZMVm"
+/>
+`;
+
+exports[`Styles - React Styled Components Avatar renders correctly 1`] = `
+<div
+  className="sc-Axmtr jIlkoi"
+/>
+`;
+
+exports[`Styles - React Styled Components Bold text renders correctly 1`] = `
+<div
+  className="sc-AxheI iQSWCA"
+>
+  During your stay
+</div>
+`;
+
+exports[`Styles - React Styled Components Contact Host button renders correctly 1`] = `
+<button
+  className="sc-AxgMl jCyJLy"
+/>
+`;
+
+exports[`Styles - React Styled Components Date joined renders correctly 1`] = `
+<div
+  className="sc-fzpans jLqwke"
+/>
+`;
+
+exports[`Styles - React Styled Components Info block renders correctly 1`] = `
+<div
+  className="sc-AxjAm ibykXD"
+/>
+`;
+
+exports[`Styles - React Styled Components Name renders correctly 1`] = `
+<h2
+  className="sc-fzplWN gNuZES"
+/>
+`;
+
+exports[`Styles - React Styled Components Note Icon renders correctly 1`] = `
+<img
+  className="sc-AxirZ SVkwc"
+/>
+`;
+
+exports[`Styles - React Styled Components Note renders correctly 1`] = `
+<div
+  className="sc-fznKkj hTLTnj"
+/>
+`;
+
+exports[`Styles - React Styled Components Read more button renders correctly 1`] = `
+<a
+  className="sc-fznyAO iJQZdx"
+/>
+`;
+
+exports[`Styles - React Styled Components Stats columns renders correctly 1`] = `
+<div
+  className="sc-AxiKw dgPOlS"
+/>
+`;
+
+exports[`Styles - React Styled Components StatsData renders correctly 1`] = `
+<div
+  className="sc-AxhCb dujZPi"
+/>
+`;
+
+exports[`Styles - React Styled Components Superhost icon on avatar renders correctly 1`] = `
+<img
+  className="sc-fzozJi dRCMDn"
+/>
+`;
+
+exports[`Styles - React Styled Components Title joined renders correctly 1`] = `
+<div
+  className="sc-fzoLsD inWKVQ"
+/>
+`;
+
+exports[`Styles - React Styled Components Top component renders correctly 1`] = `
+<div
+  className="sc-AxhUy kTSBDK"
+/>
+`;

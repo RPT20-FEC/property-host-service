@@ -20,6 +20,12 @@ describe('Host description component', function() {
     expect(wrapper.find('.description').text()).toEqual(sampleData.description.substr(0, 180) + '... read more');
   });
 
+  it('should show full description and remove read more button when user clicks on Read More button', function() {
+    wrapper.find('.read-more').simulate('click');
+    expect(wrapper.find('.read-more').length).toBe(0);
+    expect(wrapper.find('.description').text()).toEqual(sampleData.description);
+  });
+
   it('should not show read more button if the description is less than 180 characters', function() {
     let desc = sampleData.description;
     sampleData.duringStay = 'very short description';

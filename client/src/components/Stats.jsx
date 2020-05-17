@@ -1,30 +1,18 @@
 import React, { useState } from "react";
 
-
-
-
 import {
   Cols, StatsData
-} from './styledComponents.jsx'
-
-
+} from './styledComponents.jsx';
 
 
 const Stats = (props) => (
   <Cols>
-    <tr>
-    <StatsData><span className="fa fa-star checked"></span> {props.reviews} Reviews </StatsData>
-    {props.verified && <StatsData><i className="fa fa-check-circle checked"></i> Verified </StatsData>}
+    <StatsData className='reviews'><img className="star" src='http://localhost:3001/assets/star.png' /> {props.reviews} Reviews </StatsData>
+    {props.verified && <StatsData className='verified'><img className="check" src='http://localhost:3001/assets/verified.png' />Verified </StatsData>}
     {props.superhost &&
-      <StatsData><img src='http://localhost:3001/assets/statsHostIcon.png' /> Superhost </StatsData>
+      <StatsData className='superhost-stats-copy'><img className='superhost-stats' src='http://localhost:3001/assets/statsHostIcon.png' /> Superhost </StatsData>
       }
-
-    </tr>
-
-
   </Cols>
 )
-
-
 
 export default Stats;

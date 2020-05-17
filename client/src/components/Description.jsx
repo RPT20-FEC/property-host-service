@@ -1,42 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ReadMore } from './styledComponents.jsx'
 
-class Description extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      full: false
-    }
 
-    this.showMoreOrLess = this.showMoreOrLess.bind(this);
-  }
+const Description = (props) => {
+  const [full, changeView] = useState(false);
 
-  changeView() {
-    this.setState({
-      full: true
-    });
-  }
-
-  showMoreOrLess() {
-    if (this.props.less && !this.state.full) {
-      return <div className="description">{this.props.less}... <ReadMore className='read-more' onClick={() => this.changeView()}>read more</ReadMore></div>
-    } else {
-      return <div className="description">{this.props.more}</div>
-    }
-  }
-
-  render() {
     return (
       <div>
-        {this.showMoreOrLess()}
+        {(props.less && !full) ? (
+        <div className="description">{props.less}... <ReadMore className='read-more' onClick={() => changeView(true)}>read more</ReadMore></div>
+      ) : (
+        <div className="description">{props.more}</div>
+      )}
       </div>
-  )}
+  )
 
-
-  }
-
-
-
-
+}
 
 export default Description;

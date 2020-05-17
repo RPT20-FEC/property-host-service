@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 require('dotenv').config();
 const path = require('path');
+const axios = require('axios');
 
 const Hosts = require('../database/Host.js');
 const sampleData = require('../database/sampleData.js');
@@ -46,30 +47,62 @@ app.get('/hosts', function(req, res, next = () => {}) {
     next();
   })
 });
-app.get('/:id', (req, res) => {
-  res.sendFile(path.join(__dirname + '/../public/index.html'));
 
+app.get('/favicon.ico', (req, res) => {
+  res.sendFile(path.join(__dirname + '/../public/assets/logo.png'));
 });
 
-app.get('/listings/:id/hosts', function(req, res, next = () => {}) {
-  // call listing service API to get host id associated with the listing id in the url
-  // query the db or call my own api to get host data with host id
-  console.log("ID is ", req.params.id);
-  Hosts.find({id: Math.round(Math.random() * 100)}).exec((err, data) => {
+// returns co-host data for cohost component
+app.get('/hosts/:id/co-hosts', (req, res) => {
+  let coHostData = [];
+  Hosts.find({id: req.params.id}).exec((err, data) => {
     if (err) {
       return console.error(err);
     }
-    res.status(200).json(data[0]);
-    next();
+
+    Hosts.find().where('id').in(data[0].coHost).select('name avatarUrl id superhost').exec((err, records) => {
+
+      if (err) {
+        return console.error(err);
+      }
+      res.status(200).json(records);
+    })
+
   })
-  //res.status(200).json(sampleData);
+});
+
+
+
+app.get('/listings/:id/hosts', function(req, res, next = () => {}) {
+
+  axios.get(`http://localhost:3005/listings/${req.params.id}`)
+  .then(data => {
+    Hosts.find({id: data.data.hostId}).exec((err, data) => {
+      if (err) {
+        return console.error(err);
+      }
+      res.status(200).json(data[0]);
+      next();
+    })
+  })
+  .catch(err =>{
+    console.error('Failed', err);
+  });
+
 });
 
 app.get('/assets/:id', (req, res) => {
   res.sendFile(path.join(__dirname + '/../public/assets/' + req.params.id));
 });
 
-
-app.listen(PORT, () => {
-  console.log(`listening on port ${PORT}`);
+app.get('/:id', (req, res) => {
+  res.sendFile(path.join(__dirname + '/../public/index.html'));
 });
+app.get('/:id/host-details/:id', (req, res) => {
+  res.sendFile(path.join(__dirname + '/../public/index.html'));
+});
+
+
+
+
+module.exports = app;
