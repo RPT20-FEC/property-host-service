@@ -14,7 +14,6 @@ position: relative;
 width: 150px;
 height: 150px;
 border-radius: 50%;
-
 `
 export const IconProfile = styled.img`
 position: absolute;
@@ -25,9 +24,7 @@ left: 130px;
 
 export const StatsData = styled.div`
 padding-right: 30px;
-
 padding-bottom: 20px;
-
 `
 export const Name = styled.div`
 font-size: 46px;
@@ -52,6 +49,4 @@ export const Quote = styled.div`
 height: 60px;
 color: #a79d9d;
 font-size: 64px;
-
-
 `

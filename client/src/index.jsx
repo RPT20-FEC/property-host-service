@@ -19,8 +19,7 @@ const getId = () => {
 
 };
 
-//ReactDOM.render(<App id={getId()}/>, document.getElementById('host'));
 
-ReactDOM.render(<Router>
+ReactDOM.render( <Router>
   <App id={getId()}/>
-</Router>, document.getElementById('host'));
+</Router>, document.getElementById('host') );

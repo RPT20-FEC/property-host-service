@@ -1,6 +1,8 @@
-var path = require('path');
-var SRC_DIR = path.join(__dirname, '/client/src');
-var DIST_DIR = path.join(__dirname, '/client/dist');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+//const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path');
+const SRC_DIR = path.join(__dirname, '/client/src');
+const DIST_DIR = path.join(__dirname, '/client/dist');
 const MomentLocalesPlugin = require('moment-locales-webpack-plugin');
 
 module.exports = {
@@ -30,6 +32,10 @@ module.exports = {
     new MomentLocalesPlugin({
         localesToKeep: ['es-us', 'ru'],
     }),
+    new CleanWebpackPlugin(),
+    //new HtmlWebpackPlugin({
+    //   title: 'Production',
+    // }),
 ]
 
 };

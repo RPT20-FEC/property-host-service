@@ -1,19 +1,20 @@
 import React from "react";
 import CohostListEntry from './CohostListEntry.jsx';
-import $ from 'jquery';
+import { ajax } from 'jquery';
 import { useState, useEffect } from 'react';
 import {
   Bold
-} from './styledComponents.jsx'
+} from './styledComponents.jsx';
 
 
 
 
 const CohostList = (props) => {
+
   const [cohosts, setCohost] = useState(0);
-  
+
   useEffect(() => {
-    $.ajax({
+    ajax({
       url: 'http://localhost:3001/hosts/' + props.id + '/co-hosts',
       type: 'GET',
       success: (data) => {
@@ -27,25 +28,18 @@ const CohostList = (props) => {
 
   }, []);
 
-
   return (
     <div>
+      <Bold> Co-hosts </Bold>
+        <div className='flex-container'>
 
-    <Bold> Co-hosts </Bold>
-       <div className='flex-container'>
+          {Array.from(cohosts).map(host =>
+            <CohostListEntry host={host} key={host.id} propertyId={props.propertyId}/>
+          )}
 
-       {Array.from(cohosts).map(host =>
-        <CohostListEntry host={host} key={host.id} propertyId={props.propertyId}/>
-        )}
-
-     </div>
+        </div>
     </div>
-
-
-
-
   );
-
 }
 
 export default CohostList;
