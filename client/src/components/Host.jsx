@@ -46,7 +46,7 @@ const Host = (props) => (
           <ContactHost className='contact-button'>Contact host</ContactHost>
         </Link>
         <Note>
-          <NoteIcon className='payment-wrg-icon' src='http://localhost:3001/assets/paymentNote.png' />
+          <NoteIcon className='payment-wrg-icon' src='https://host-service.s3-us-west-1.amazonaws.com/paymentNote.png' />
           <p className='payment-warning'>To protect your payment, never transfer money or communicate outside of the Airbnb website or app. </p>
         </Note>
       </Info>

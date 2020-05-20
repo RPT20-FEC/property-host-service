@@ -17,7 +17,7 @@ const CohostListEntry = (props) => (
         <Link to={`${props.propertyId}/host-details/${props.host.id}`}>
           <ImageSmall className='photo' src={props.host.avatarUrl} />
           {props.host.superhost &&
-            <IconSmall className='icon' src='http://localhost:3001/assets/icon.png' />
+            <IconSmall className='icon' src='https://host-service.s3-us-west-1.amazonaws.com/icon.png' />
           }
         </Link>
       </Avatar>
