@@ -40,21 +40,21 @@ const HostPage = (props) => {
         <ImageProfile className='photo' src={host.avatarUrl} />
 
         {host.superhost &&
-          <IconProfile className='icon' src='http://localhost:3001/assets/icon.png' />
+          <IconProfile className='icon' src='https://host-service.s3-us-west-1.amazonaws.com/icon.png' />
         }
       </Avatar>
 
       <StatsData className='reviews'>
-        <img className="star" src='http://localhost:3001/assets/profile-reviews.png' /> {host.reviews} Reviews
+        <img className="star" src='https://host-service.s3-us-west-1.amazonaws.com/profile-reviews.png' /> {host.reviews} Reviews
       </StatsData>
       {host.verified &&
         <StatsData className='verified'>
-          <img className="check" src='http://localhost:3001/assets/profile-ver.png' /> Verified
+          <img className="check" src='https://host-service.s3-us-west-1.amazonaws.com/profile-ver.png' /> Verified
         </StatsData>
       }
       {host.superhost &&
         <StatsData className='superhost-stats-copy'>
-          <img className='superhost-stats' src='http://localhost:3001/assets/icon-super-profile.png' /> Superhost
+          <img className='superhost-stats' src='https://host-service.s3-us-west-1.amazonaws.com/icon-super-profile.png' /> Superhost
         </StatsData>
       }
 

@@ -12,6 +12,7 @@ import Host from './Host.jsx';
 import HostPage from './HostPage.jsx';
 import SendMessage from './SendMessage.jsx';
 import {GlobalStyle} from './styledComponents.jsx'
+require('dotenv').config();
 
 
 class App extends React.Component {
@@ -32,7 +33,7 @@ class App extends React.Component {
 
   fetchData(id) {
     ajax({
-      url: 'http://localhost:3001/listings/' + id + '/hosts',
+      url: process.env.host + '/listings/' + id + '/hosts',
       type: 'GET',
       success: (data) => {
         this.renderShortDesc(data);
