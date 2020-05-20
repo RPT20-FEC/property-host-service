@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import $ from 'jquery';
-//import { Redirect } from "react-router-dom";
+import { ajax } from 'jquery';
 import {
   BrowserRouter as Router,
   Switch,
@@ -9,7 +8,6 @@ import {
   Link
 } from "react-router-dom";
 
-//import Profile from './components/Profile.jsx';
 import Host from './Host.jsx';
 import HostPage from './HostPage.jsx';
 import SendMessage from './SendMessage.jsx';
@@ -33,7 +31,7 @@ class App extends React.Component {
   }
 
   fetchData(id) {
-    $.ajax({
+    ajax({
       url: 'http://localhost:3001/listings/' + id + '/hosts',
       type: 'GET',
       success: (data) => {
@@ -55,13 +53,11 @@ class App extends React.Component {
     this.setState({
       host: data
     });
-
   }
 
 
   render() {
 
-    // console.log('rhdjfgj', this.state);
     return (
       <div className="main">
         <GlobalStyle />
@@ -70,14 +66,13 @@ class App extends React.Component {
         <Switch>
           <Route exact path='/:id'>
            <Host host={this.state.host} propertyId={this.props.id}/>
-         </Route>
-         <Route path='/:listingid/host-details/:id' component={HostPage}/>
-          
+          </Route>
+          <Route path='/:listingid/host-details/:id' component={HostPage}/>
           <Route path='/:id/send-message'>
-          <SendMessage name={this.state.host.name} responseTime={this.state.host.responseTime} />
+            <SendMessage name={this.state.host.name} responseTime={this.state.host.responseTime} />
           </Route>
         </Switch>
-  }
+        }
       </div>
     )
   }

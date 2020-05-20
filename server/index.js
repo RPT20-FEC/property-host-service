@@ -54,23 +54,20 @@ app.get('/favicon.ico', (req, res) => {
 
 // returns co-host data for cohost component
 app.get('/hosts/:id/co-hosts', (req, res) => {
+
   let coHostData = [];
   Hosts.find({id: req.params.id}).exec((err, data) => {
     if (err) {
       return console.error(err);
     }
-
     Hosts.find().where('id').in(data[0].coHost).select('name avatarUrl id superhost').exec((err, records) => {
-
       if (err) {
         return console.error(err);
       }
       res.status(200).json(records);
     })
-
   })
 });
-
 
 
 app.get('/listings/:id/hosts', function(req, res, next = () => {}) {
@@ -88,7 +85,6 @@ app.get('/listings/:id/hosts', function(req, res, next = () => {}) {
   .catch(err =>{
     console.error('Failed', err);
   });
-
 });
 
 app.get('/assets/:id', (req, res) => {
@@ -98,11 +94,10 @@ app.get('/assets/:id', (req, res) => {
 app.get('/:id', (req, res) => {
   res.sendFile(path.join(__dirname + '/../public/index.html'));
 });
+
 app.get('/:id/host-details/:id', (req, res) => {
   res.sendFile(path.join(__dirname + '/../public/index.html'));
 });
-
-
 
 
 module.exports = app;

@@ -15,9 +15,6 @@ const lorem = new LoremIpsum({
   }
 });
 
-
-
-
 const sampleData = [
   {
     id: 2,
@@ -31,6 +28,7 @@ const sampleData = [
     responseTime: 'within an hour',
     responseRate: 100,
     location: 'New York',
+    coHost: [4],
     avatarUrl: 'https://host-service.s3-us-west-1.amazonaws.com/9.jpg'
   },
   {
@@ -80,15 +78,13 @@ const sampleData = [
     location: 'Honolulu, HI',
     avatarUrl: 'https://host-service.s3-us-west-1.amazonaws.com/4.jpg'
   }
-
-
 ];
+
 var randomLocation = ['San Jose, CA', 'New Deli, India', 'Moscow, Russia', 'Paris, France', 'Yerevan, Armenia', 'San Francisco, CA', 'Berlin, Germany', 'Rome, Italy', 'Napa, CA'];
 var randomLanguage = ['English', 'Chinese', 'Spanish', 'Hindi', 'Arabic', 'PORTUGUESE', 'Russian'];
 var randomResponse = ['within an hour', 'within a day', 'within a minute', 'within a week' ,'within 2 hours'];
 
 const insertSampleData = function() {
-
   for (var i = 5; i < 120; i++) {
     if (i < 30) {
       var img = i;
@@ -105,7 +101,7 @@ const insertSampleData = function() {
       description: lorem.generateSentences(5),
       duringStay: lorem.generateSentences(3),
       reviews: Math.round(Math.random() * 1000),
-      verified: Math.random() >= 0.8,
+      verified: Math.random() >= 0.9,
       superhost: Math.random() >= 0.7,
       joined_at: moment(new Date(+(new Date()) - Math.floor(Math.random()*1000000000000)))
       .format(),
@@ -117,6 +113,7 @@ const insertSampleData = function() {
     }
     sampleData.push(temp);
   }
+  
   Host.create(sampleData)
     .then(() => db.close())
     .catch(err => console.log(err));

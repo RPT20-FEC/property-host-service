@@ -10,41 +10,28 @@ import App from './App.jsx';
 var moment = require('moment');
 
 
-
 import {
   Avatar, Image, Icon, Title, Date, Name, Top
-} from './styledComponents.jsx'
-
-
+} from './styledComponents.jsx';
 
 
 const Profile = (props) => (
   <div>
-     <Top>
-
-       <Avatar>
-         <Link to={`${props.propertyId}/host-details/${props.host.id}`}>
-
-         <Image className='photo' src={props.host.avatarUrl} />
-         {props.host.superhost &&
-         <Icon className='icon' src='http://localhost:3001/assets/icon.png' />
-         }
-         </Link>
-
-       </Avatar>
-
-
-
-    <Title>
-    <Name className='host-name' >Hosted by {props.host.name}</Name>
-    <Date className='date-joined' >Joined in {moment(props.host.joined_at).format("MMMM YYYY")}</Date>
-
-    </Title>
+    <Top>
+      <Avatar>
+        <Link to={`${props.propertyId}/host-details/${props.host.id}`}>
+          <Image className='photo' src={props.host.avatarUrl} />
+          {props.host.superhost &&
+          <Icon className='icon' src='http://localhost:3001/assets/icon.png' />
+          }
+        </Link>
+      </Avatar>
+      <Title>
+        <Name className='host-name' >Hosted by {props.host.name}</Name>
+        <Date className='date-joined' >Joined in {moment(props.host.joined_at).format("MMMM YYYY")}</Date>
+      </Title>
     </Top>
-
   </div>
 )
-
-
 
 export default Profile;

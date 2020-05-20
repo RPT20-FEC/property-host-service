@@ -5,17 +5,12 @@ import { useParams} from "react-router";
 import Profile from './Profile.jsx';
 var moment = require('moment');
 
-
-
 import {
   Info, Avatar, Date
-} from './styledComponents.jsx'
+} from './styledComponents.jsx';
 import {
   IconProfile, ImageProfile, StatsData, MainStyles, Name, Info1, Quote
-} from './HostPageStyles.jsx'
-
-
-
+} from './HostPageStyles.jsx';
 
 const HostPage = (props) => {
 
@@ -40,36 +35,40 @@ const HostPage = (props) => {
   return (
 
   <MainStyles className='flex-container host-details'>
-  <Info1>
-    <Avatar className='avatar'>
-      <ImageProfile className='photo' src={host.avatarUrl} />
+    <Info1>
+      <Avatar className='avatar'>
+        <ImageProfile className='photo' src={host.avatarUrl} />
 
+        {host.superhost &&
+          <IconProfile className='icon' src='http://localhost:3001/assets/icon.png' />
+        }
+      </Avatar>
+
+      <StatsData className='reviews'>
+        <img className="star" src='http://localhost:3001/assets/profile-reviews.png' /> {host.reviews} Reviews
+      </StatsData>
+      {host.verified &&
+        <StatsData className='verified'>
+          <img className="check" src='http://localhost:3001/assets/profile-ver.png' /> Verified
+        </StatsData>
+      }
       {host.superhost &&
-      <IconProfile className='icon' src='http://localhost:3001/assets/icon.png' />
-      }
-    </Avatar>
-
-    <StatsData className='reviews'><img className="star" src='http://localhost:3001/assets/profile-reviews.png' /> {host.reviews} Reviews </StatsData>
-    {host.verified && <StatsData className='verified'><img className="check" src='http://localhost:3001/assets/profile-ver.png' /> Verified </StatsData>}
-    {host.superhost &&
-      <StatsData className='superhost-stats-copy'><img className='superhost-stats' src='http://localhost:3001/assets/icon-super-profile.png' /> Superhost </StatsData>
+        <StatsData className='superhost-stats-copy'>
+          <img className='superhost-stats' src='http://localhost:3001/assets/icon-super-profile.png' /> Superhost
+        </StatsData>
       }
 
-  </Info1>
-  <Info className='desc-host-details'>
-    <Name className='host-name' >Hi, I'm {host.name}</Name>
-    <Date className='date-joined' >Joined in {moment(host.joined_at).format("MMMM YYYY")}</Date>
-    <Quote>"</Quote>
-    <div className='desc'>{host.description} </div>
-    <div className='lang'><img src='https://host-service.s3-us-west-1.amazonaws.com/lang-icon.PNG'/>   Speaks {host.languages}</div>
-    <div className='location'><img src='https://host-service.s3-us-west-1.amazonaws.com/loc--icon.png'/>   Lives in {host.location}</div>
-  </Info>
-
-    </MainStyles>
-
-
+    </Info1>
+    <Info className='desc-host-details'>
+      <Name className='host-name' >Hi, I'm {host.name}</Name>
+      <Date className='date-joined' >Joined in {moment(host.joined_at).format("MMMM YYYY")}</Date>
+      <Quote>"</Quote>
+      <div className='desc'>{host.description} </div>
+      <div className='lang'><img src='https://host-service.s3-us-west-1.amazonaws.com/lang-icon.PNG'/>   Speaks {host.languages}</div>
+      <div className='location'><img src='https://host-service.s3-us-west-1.amazonaws.com/loc--icon.png'/>   Lives in {host.location}</div>
+    </Info>
+  </MainStyles>
   )
 }
-
 
 export default HostPage;
