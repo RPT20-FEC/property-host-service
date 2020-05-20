@@ -72,7 +72,7 @@ app.get('/hosts/:id/co-hosts', (req, res) => {
 
 app.get('/listings/:id/hosts', function(req, res, next = () => {}) {
 
-  axios.get(`http://localhost:3005/listings/${req.params.id}`)
+  axios.get(`http://204.236.167.174/listings/${req.params.id}`)
   .then(data => {
     Hosts.find({id: data.data.hostId}).exec((err, data) => {
       if (err) {
