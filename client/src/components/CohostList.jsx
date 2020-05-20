@@ -5,7 +5,6 @@ import { useState, useEffect } from 'react';
 import {
   Bold
 } from './styledComponents.jsx';
-require('dotenv').config();
 
 
 
@@ -16,7 +15,7 @@ const CohostList = (props) => {
 
   useEffect(() => {
     ajax({
-      url: process.env.host + '/hosts/' + props.id + '/co-hosts',
+      url: 'http://18.144.163.219:3001/hosts/' + props.id + '/co-hosts',
       type: 'GET',
       success: (data) => {
         console.log('got cohost data ', data)
