@@ -49,7 +49,7 @@ const HostPage = (props) => {
       </StatsData>
       {host.verified &&
         <StatsData className='verified'>
-          <img className="check" src='https://host-service.s3-us-west-1.amazonaws.com/profile-ver.png' /> Verified
+          <img className="check" src='https://host-service.s3-us-west-1.amazonaws.com/profile-ver.PNG' /> Verified
         </StatsData>
       }
       {host.superhost &&
