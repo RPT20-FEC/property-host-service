@@ -113,10 +113,12 @@ const insertSampleData = function() {
     }
     sampleData.push(temp);
   }
-  
-  Host.create(sampleData)
-    .then(() => db.close())
-    .catch(err => console.log(err));
+  Host.remove({})
+    .then(()=> {
+      Host.create(sampleData)
+        .then(() => db.close())
+        .catch(err => console.log(err));
+    })
 };
 
 insertSampleData();

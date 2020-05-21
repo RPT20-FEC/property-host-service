@@ -32,7 +32,7 @@ class App extends React.Component {
 
   fetchData(id) {
     ajax({
-      url: 'http://18.144.163.219:3001/listings/' + id + '/hosts',
+      url: 'http://18.144.163.219/listings/' + id + '/hosts',
       type: 'GET',
       success: (data) => {
         this.renderShortDesc(data);
