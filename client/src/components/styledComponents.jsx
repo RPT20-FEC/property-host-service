@@ -16,18 +16,12 @@ body {
   width: auto;
   padding-left: 24px;
 }
-@media screen and (max-width: 600px) {
-  .info {
-    width: 100%;
-  }
-}
+
 .flex-container {
   display: flex;
+  padding: 0px;
 }
 
-.checked {
-  color: rgb(255, 102, 102);
-}
 .avatar {
   margin-left: 50px;
 }
@@ -39,7 +33,6 @@ body {
   width: 62%;
   margin: auto;
 }
-
 `
 
 export const Info = styled.div`
@@ -93,9 +86,9 @@ border-color: rgb(34, 34, 34);
 `
 export const Bold = styled.div`
 font-weight: 600;
-padding-top: 10px;
+padding-top: 5px;
 padding-bottom: 4px;
-font-size: 1.11em;
+
 `
 export const Avatar = styled.div`
 position:relative;
@@ -156,7 +149,6 @@ font: 400 13.3333px Arial;
 `
 export const MessageStyle = styled.div`
 margin-top: 100px;
-
 * {
   padding-top: 20px;
   padding-bottom: 10px;
@@ -192,9 +184,3 @@ height: 35px;
 top: 60px;
 left: 55px;
 `
-
-
-
-
-
-
