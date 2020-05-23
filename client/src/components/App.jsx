@@ -4,8 +4,7 @@ import { ajax } from 'jquery';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 
 import Host from './Host.jsx';
@@ -26,6 +25,7 @@ class App extends React.Component {
     this.fetchData = this.fetchData.bind(this);
 
   }
+  
   componentDidMount(){
     this.fetchData(this.props.id);
   }

@@ -19,6 +19,7 @@ body {
 
 .flex-container {
   display: flex;
+  padding: 0px;
 }
 
 .avatar {
@@ -85,9 +86,9 @@ border-color: rgb(34, 34, 34);
 `
 export const Bold = styled.div`
 font-weight: 600;
-padding-top: 10px;
+padding-top: 5px;
 padding-bottom: 4px;
-font-size: 1.11em;
+
 `
 export const Avatar = styled.div`
 position:relative;
