@@ -19,7 +19,7 @@ const Profile = (props) => (
   <div>
     <Top>
       <Avatar>
-        <Link to={`${props.propertyId}/host-details/${props.host.id}`}>
+        <Link to={`${props.propertyId}/host-details/${props.host.id}`} target="_blank" >
           <Image className='photo' src={props.host.avatarUrl} />
           {props.host.superhost &&
           <Icon className='icon' src='https://host-service.s3-us-west-1.amazonaws.com/icon.png' />

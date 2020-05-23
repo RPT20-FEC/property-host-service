@@ -16,18 +16,11 @@ body {
   width: auto;
   padding-left: 24px;
 }
-@media screen and (max-width: 600px) {
-  .info {
-    width: 100%;
-  }
-}
+
 .flex-container {
   display: flex;
 }
 
-.checked {
-  color: rgb(255, 102, 102);
-}
 .avatar {
   margin-left: 50px;
 }
@@ -39,7 +32,6 @@ body {
   width: 62%;
   margin: auto;
 }
-
 `
 
 export const Info = styled.div`
@@ -156,7 +148,6 @@ font: 400 13.3333px Arial;
 `
 export const MessageStyle = styled.div`
 margin-top: 100px;
-
 * {
   padding-top: 20px;
   padding-bottom: 10px;
@@ -192,9 +183,3 @@ height: 35px;
 top: 60px;
 left: 55px;
 `
-
-
-
-
-
-

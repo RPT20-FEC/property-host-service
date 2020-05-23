@@ -15,7 +15,7 @@ const CohostList = (props) => {
 
   useEffect(() => {
     ajax({
-      url: 'http://18.144.163.219/hosts/' + props.id + '/co-hosts',
+      url: 'http://localhost:3001/hosts/' + props.id + '/co-hosts',
       type: 'GET',
       success: (data) => {
         console.log('got cohost data ', data)

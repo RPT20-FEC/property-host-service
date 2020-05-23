@@ -21,7 +21,7 @@ const HostPage = (props) => {
 
     console.log('here is host id from params, ', id)
     $.ajax({
-      url: 'http://18.144.163.219/hosts/' + id,
+      url: 'http://localhost:3001/hosts/' + id,
       type: 'GET',
       success: (data) => {
         setHost(data[0]);
@@ -49,7 +49,7 @@ const HostPage = (props) => {
       </StatsData>
       {host.verified &&
         <StatsData className='verified'>
-          <img className="check" src='https://host-service.s3-us-west-1.amazonaws.com/profile-ver.png' /> Verified
+          <img className="check" src='https://host-service.s3-us-west-1.amazonaws.com/profile-ver.PNG' /> Verified
         </StatsData>
       }
       {host.superhost &&
