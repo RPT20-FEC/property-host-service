@@ -1,3 +1,4 @@
+
 const express = require('express');
 const bodyParser = require('body-parser');
 require('dotenv').config();
@@ -46,10 +47,6 @@ app.get('/hosts', function(req, res, next = () => {}) {
     res.status(200).json(data);
     next();
   })
-});
-
-app.get('/favicon.ico', (req, res) => {
-  res.sendFile(path.join(__dirname + '/../public/assets/logo.png'));
 });
 
 // returns co-host data for cohost component
