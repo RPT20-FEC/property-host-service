@@ -101,6 +101,7 @@ position: relative;
 width: 100px;
 height: 100px;
 border-radius: 50%;
+object-fit: cover;
 `
 export const Icon = styled.img`
 position: absolute;
