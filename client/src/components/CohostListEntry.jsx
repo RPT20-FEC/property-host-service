@@ -14,7 +14,7 @@ const CohostListEntry = (props) => (
   <Info>
     <div className='flex-container'>
       <Avatar>
-        <Link to={`http://54.215.154.186/${props.propertyId}/host-details/${props.host.id}`} target="_blank">
+        <Link to={`${props.propertyId}/host-details/${props.host.id}`} target="_blank">
           <ImageSmall className='photo' src={props.host.avatarUrl} />
           {props.host.superhost &&
             <IconSmall className='icon' src='https://host-service.s3-us-west-1.amazonaws.com/icon.png' />
