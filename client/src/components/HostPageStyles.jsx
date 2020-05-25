@@ -11,8 +11,8 @@ margin-top: 100px;
 
 export const ImageProfile = styled.img`
 position: relative;
-width: 190px;
-height: 190px;
+width: 150px;
+height: 150px;
 border-radius: 50%;
 object-fit: cover;
 `
