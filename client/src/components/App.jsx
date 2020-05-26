@@ -67,8 +67,8 @@ class App extends React.Component {
           <Route exact path='/:id'>
            <Host host={this.state.host} propertyId={this.props.id}/>
           </Route>
-          <Route path='/:listingid/host-details/:id' component={HostPage} render={() => (window.location = "http://54.215.154.186")} />
-          <Route path='/:id/send-message' render={() => (window.location = "http://54.215.154.186")} >
+          <Route path='/:listingid/host-details/:id' component={HostPage} render={() => (window.location.href = "http://54.215.154.186")} />
+          <Route path='/:id/send-message' render={() => (window.location.href = "http://54.215.154.186")} >
             <SendMessage name={this.state.host.name} responseTime={this.state.host.responseTime} />
           </Route>
         </Switch>
