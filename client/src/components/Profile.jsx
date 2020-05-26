@@ -20,13 +20,12 @@ const Profile = (props) => (
     <Top>
       <Avatar>
       <a target="_blank" href={`http://54.215.154.186/${props.propertyId}/host-details/${props.host.id}`} >
-      <Link to={`${props.propertyId}/host-details/${props.host.id}`}  >
 
           <Image className='photo' src={props.host.avatarUrl} />
           {props.host.superhost &&
           <Icon className='icon' src='https://host-service.s3-us-west-1.amazonaws.com/icon.png' />
           }
-        </Link></a>
+        </a>
 
       </Avatar>
       <Title>
