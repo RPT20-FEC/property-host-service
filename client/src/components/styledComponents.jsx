@@ -145,7 +145,7 @@ width: 45%;
 font: 400 13.3333px Arial;
 `
 export const MessageStyle = styled.div`
-margin-top: 100px;
+margin: 50px;
 * {
   padding-top: 20px;
   padding-bottom: 10px;

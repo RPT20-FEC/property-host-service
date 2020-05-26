@@ -3,13 +3,10 @@ import Description from './Description.jsx';
 import Profile from './Profile.jsx';
 import Stats from './Stats.jsx';
 import CohostList from './CohostList.jsx';
-import {
-  Link
-} from "react-router-dom";
-
+import SendMessage from './SendMessage.jsx';
 
 import {
-  Bold, Info, ContactHost, Note, NoteIcon, Cols
+  Bold, Info, Note, NoteIcon, Cols
 } from './styledComponents.jsx';
 
 
@@ -42,9 +39,7 @@ const Host = (props) => (
         <div className='lang'>Language: {props.host.languages}</div>
         <div className='resp-rate'>Response rate: {props.host.responseRate}%</div>
         <div className='resp-time'>Response time: {props.host.responseTime}</div>
-        <Link to={`${props.propertyId}/send-message`} >
-          <ContactHost className='contact-button'>Contact host</ContactHost>
-        </Link>
+        <SendMessage name={props.host.name} responseTime={props.host.responseTime} />
         <Note>
           <NoteIcon className='payment-wrg-icon' src='https://host-service.s3-us-west-1.amazonaws.com/paymentNote.png' />
           <p className='payment-warning'>To protect your payment, never transfer money or communicate outside of the Airbnb website or app. </p>
