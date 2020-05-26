@@ -6,10 +6,6 @@ export const GlobalStyle = createGlobalStyle`
 * {
   box-sizing: border-box;
 }
-body {
-  font-family: 'Montserrat';
-  font-size: 1.1em;
-}
 #host {
   margin-left: 150px;
   margin-right: 50px;

@@ -42,7 +42,7 @@ const Host = (props) => (
         <div className='lang'>Language: {props.host.languages}</div>
         <div className='resp-rate'>Response rate: {props.host.responseRate}%</div>
         <div className='resp-time'>Response time: {props.host.responseTime}</div>
-        <Link to={`${props.propertyId}/send-message`} target="_blank" >
+        <Link to={`${props.propertyId}/send-message`} >
           <ContactHost className='contact-button'>Contact host</ContactHost>
         </Link>
         <Note>
