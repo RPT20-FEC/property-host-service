@@ -10,7 +10,6 @@ export const GlobalStyle = createGlobalStyle`
   margin: 80px;
   margin-right: 50px;
   width: auto;
-  padding-left: 24px;
 }
 
 .flex-container {
@@ -34,7 +33,7 @@ export const GlobalStyle = createGlobalStyle`
 export const Info = styled.div`
 padding-top: 5px;
 padding-bottom: 5px;
-width: 42%;
+width: 50%;
 padding-right: 100px;
 * {
   padding-top: 5px;
@@ -57,6 +56,7 @@ padding-bottom: 0px;
 }
 `
 export const Top = styled.div`
+margin: 80px;
 padding-top: 5px;
 padding-bottom: 0px;
 display: flex;

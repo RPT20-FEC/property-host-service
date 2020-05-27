@@ -5,7 +5,10 @@
   ],
   "env": {
     "test": {
-      "plugins": ["@babel/plugin-transform-runtime", "babel-plugin-styled-components"]
+      "plugins": ["@babel/plugin-transform-runtime",  "babel-plugin-styled-components",
+        {
+          "namespace": "your-namespace"
+        }]
     }
   }
 }
