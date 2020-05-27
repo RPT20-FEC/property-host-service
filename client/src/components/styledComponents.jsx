@@ -7,7 +7,7 @@ export const GlobalStyle = createGlobalStyle`
   box-sizing: border-box;
 }
 #host {
-  margin-left: 150px;
+  margin: 80px;
   margin-right: 50px;
   width: auto;
   padding-left: 24px;
