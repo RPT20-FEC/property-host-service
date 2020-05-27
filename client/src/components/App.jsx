@@ -59,7 +59,7 @@ class App extends React.Component {
   render() {
 
     return (
-      <div className="main">
+      <div className="hostServiceSpecific">
         <GlobalStyle />
         { this.state.host &&
 
