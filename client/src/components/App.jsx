@@ -10,7 +10,7 @@ import {
 import Host from './Host.jsx';
 import HostPage from './HostPage.jsx';
 import SendMessage from './SendMessage.jsx';
-import {GlobalStyle} from './styledComponents.jsx';
+
 
 
 class App extends React.Component {
@@ -32,7 +32,7 @@ class App extends React.Component {
 
   fetchData(id) {
     ajax({
-      url: 'http://54.215.154.186/listings/' + id + '/hosts',
+      url: 'http://localhost:3001/listings/' + id + '/hosts',
       type: 'GET',
       success: (data) => {
         this.renderShortDesc(data);
@@ -60,7 +60,7 @@ class App extends React.Component {
 
     return (
       <div className="main">
-        <GlobalStyle />
+        
         { this.state.host &&
 
         <Switch>

@@ -2,34 +2,7 @@ import styled from 'styled-components'
 
 import { createGlobalStyle } from 'styled-components'
 
-export const GlobalStyle = createGlobalStyle`
-* {
-  box-sizing: border-box;
-}
-#host {
-  margin: 80px;
-  margin-right: 50px;
-  width: auto;
-  background-color: yellow;
-}
 
-.flex-container {
-  display: flex;
-  padding: 0px;
-}
-
-.avatar {
-  margin-left: 50px;
-}
-.desc-host-details {
-  padding-left: 100px;
-  width: 65%;
-}
-.cohostAv {
-  width: 62%;
-  margin: auto;
-}
-`
 
 export const InfoHost = styled.div`
 padding-top: 5px;
