@@ -6,13 +6,6 @@
   "env": {
     "test": {
       "plugins": ["@babel/plugin-transform-runtime"]
-    },
-    "production": {
-      "plugins": [[
-        "@quickbaseoss/babel-plugin-styled-components-css-namespace",
-        {"cssNamespace": ".hostServiceSpecific"}
-      ],
-      "babel-plugin-styled-components"]
     }
   }
 }
