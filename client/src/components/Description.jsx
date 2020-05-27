@@ -6,7 +6,7 @@ const Description = (props) => {
   const [full, changeView] = useState(false);
 
     return (
-      <div>
+      <div className={styles.desc}>
         {(props.less && !full) ? (
           <div className="description">{props.less}...
             <a className={styles.readMore} onClick={() => changeView(true)}>read more

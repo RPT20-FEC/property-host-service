@@ -12,8 +12,8 @@ border-width: 1px;
 background-color: white;
 border-color: rgb(34, 34, 34);
 }
-.sendMessage :hover {
-  background: rgb(240,240,240);
+.sendMessage:hover {
+  background: rgb(240,240,240) !important;
 }
 .message {
   display: block;
