@@ -68,6 +68,7 @@ class App extends React.Component {
            <Host host={this.state.host} propertyId={this.props.id}/>
           </Route>
           <Route path='/:listingid/host-details/:id' component={HostPage}/>
+
         </Switch>
         }
       </div>

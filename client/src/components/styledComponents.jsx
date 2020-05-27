@@ -31,7 +31,7 @@ export const GlobalStyle = createGlobalStyle`
 }
 `
 
-export const Info = styled.div`
+export const InfoHost = styled.div`
 padding-top: 5px;
 padding-bottom: 5px;
 width: 42%;

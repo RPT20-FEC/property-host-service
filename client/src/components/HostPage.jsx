@@ -6,7 +6,7 @@ import Profile from './Profile.jsx';
 var moment = require('moment');
 
 import {
-  Info, Avatar, Date
+  InfoHost, Avatar, Date
 } from './styledComponents.jsx';
 import {
   IconProfile, ImageProfile, StatsData, MainStyles, Name, Info1, Quote
@@ -59,14 +59,14 @@ const HostPage = (props) => {
       }
 
     </Info1>
-    <Info className='desc-host-details'>
+    <InfoHost className='desc-host-details'>
       <Name className='host-name' >Hi, I'm {host.name}</Name>
       <Date className='date-joined' >Joined in {moment(host.joined_at).format("MMMM YYYY")}</Date>
       <Quote>"</Quote>
       <div className='desc'>{host.description} </div>
       <div className='lang'><img src='https://host-service.s3-us-west-1.amazonaws.com/lang-icon.PNG'/>   Speaks {host.languages}</div>
       <div className='location'><img src='https://host-service.s3-us-west-1.amazonaws.com/loc--icon.png'/>   Lives in {host.location}</div>
-    </Info>
+    </InfoHost>
   </MainStyles>
   )
 }

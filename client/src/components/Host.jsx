@@ -6,7 +6,7 @@ import CohostList from './CohostList.jsx';
 import SendMessage from './SendMessage.jsx';
 
 import {
-  Bold, Info, Note, NoteIcon, Cols
+  Bold, InfoHost, Note, NoteIcon, Cols
 } from './styledComponents.jsx';
 
 
@@ -15,7 +15,7 @@ const Host = (props) => (
     <Profile host={props.host} propertyId={props.propertyId}/>
 
     <div className='flex-container'>
-      <Info>
+      <InfoHost>
         <Stats superhost={props.host.superhost} reviews={props.host.reviews} verified={props.host.verified}/>
 
         <Description className='desc' less={props.host.descShort} more={props.host.description}/>
@@ -34,8 +34,8 @@ const Host = (props) => (
           <div className="superhost-desc">Superhosts are experienced, highly rated hosts who are committed to providing great stays for guests.</div>
           </div>
         }
-      </Info>
-      <Info>
+      </InfoHost>
+      <InfoHost>
         <div className='lang'>Language: {props.host.languages}</div>
         <div className='resp-rate'>Response rate: {props.host.responseRate}%</div>
         <div className='resp-time'>Response time: {props.host.responseTime}</div>
@@ -44,7 +44,7 @@ const Host = (props) => (
           <NoteIcon className='payment-wrg-icon' src='https://host-service.s3-us-west-1.amazonaws.com/paymentNote.png' />
           <p className='payment-warning'>To protect your payment, never transfer money or communicate outside of the Airbnb website or app. </p>
         </Note>
-      </Info>
+      </InfoHost>
     </div>
   </div>
 )

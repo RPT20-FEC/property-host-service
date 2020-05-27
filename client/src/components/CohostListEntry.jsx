@@ -4,14 +4,14 @@ import {
 } from "react-router-dom";
 
 import {
-  Info, Avatar, ImageSmall, IconSmall
+  InfoHost, Avatar, ImageSmall, IconSmall
 } from './styledComponents.jsx';
 
 
 
 
 const CohostListEntry = (props) => (
-  <Info>
+  <InfoHost>
     <div className='flex-container'>
       <Avatar>
         <Link to={`${props.propertyId}/host-details/${props.host.id}`} >
@@ -23,7 +23,7 @@ const CohostListEntry = (props) => (
       </Avatar>
       <div className='cohostAv'>{props.host.name}</div>
     </div>
-  </Info>
+  </InfoHost>
 )
 
 export default CohostListEntry;
