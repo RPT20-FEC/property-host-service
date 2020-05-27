@@ -6,7 +6,7 @@ export const GlobalStyle = createGlobalStyle`
 * {
   box-sizing: border-box;
 }
-#host {
+.main {
   margin: 80px;
   margin-right: 50px;
   width: auto;
