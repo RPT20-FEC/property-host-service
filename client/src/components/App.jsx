@@ -32,7 +32,7 @@ class App extends React.Component {
 
   fetchData(id) {
     ajax({
-      url: 'http://localhost:3001/listings/' + id + '/hosts',
+      url: 'http://54.215.154.186/listings/' + id + '/hosts',
       type: 'GET',
       success: (data) => {
         this.renderShortDesc(data);
@@ -60,7 +60,7 @@ class App extends React.Component {
 
     return (
       <div className="main">
-        
+
         { this.state.host &&
 
         <Switch>
