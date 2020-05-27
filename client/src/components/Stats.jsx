@@ -1,24 +1,22 @@
 import React, { useState } from "react";
+import styles from '../styles/commonStyles.module.css';
 
-import {
-  Cols, StatsData
-} from './styledComponents.jsx';
 
 
 const Stats = (props) => (
-  <Cols>
-    <StatsData className='reviews'>
+  <div className={styles.statsContainer}>
+    <div className={styles.statsData}>
       <img className="star" src='https://host-service.s3-us-west-1.amazonaws.com/star.png' />
-      {props.reviews} Reviews </StatsData>
+      {props.reviews} Reviews </div>
     {props.verified &&
-    <StatsData className='verified'>
-      <img className="check" src='https://host-service.s3-us-west-1.amazonaws.com/verified.png' />Verified </StatsData>
+    <div className={styles.statsData}>
+      <img className="check" src='https://host-service.s3-us-west-1.amazonaws.com/verified.png' />Verified </div>
       }
     {props.superhost &&
-      <StatsData className='superhost-stats-copy'>
-        <img className='superhost-stats' src='https://host-service.s3-us-west-1.amazonaws.com/statsHostIcon.png' /> Superhost </StatsData>
+      <div className={styles.statsData}>
+        <img className='superhost-stats' src='https://host-service.s3-us-west-1.amazonaws.com/statsHostIcon.png' /> Superhost </div>
       }
-  </Cols>
+  </div>
 )
 
 export default Stats;

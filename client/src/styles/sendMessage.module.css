@@ -1,0 +1,49 @@
+.sendMessage {
+  cursor: pointer;
+font-size: 16px;
+font-weight: 600;
+padding-top: 13px;
+padding-bottom: 13px;
+padding-left: 23px;
+padding-right: 23px;
+margin-top: 30px;
+border-radius: 8px;
+border-width: 1px;
+background-color: white;
+border-color: rgb(34, 34, 34);
+}
+.sendMessage :hover {
+  background: rgb(240,240,240);
+}
+.message {
+  display: block;
+margin-top: 30px;
+cursor: pointer;
+font-size: 16px;
+line-height: 24px;
+padding-top: 10px;
+padding-bottom: 10px;
+font-weight: 700;
+padding-left: 22px;
+padding-right: 22px;
+color: rgb(255, 255, 255);
+border-radius: 6px;
+background: rgb(0, 132, 137);
+border-color: transparent;
+}
+.textArea {
+  margin-top: 40px;
+padding-top: 20px;
+padding-bottom: 21px;
+width: 45%;
+font: 400 13.3333px Arial;
+}
+
+.main {
+  margin: 50px;
+
+}
+.main * {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}

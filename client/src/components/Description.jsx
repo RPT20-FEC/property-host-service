@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ReadMore } from './styledComponents.jsx'
+import styles from '../styles/commonStyles.module.css';
 
 
 const Description = (props) => {
@@ -9,8 +9,8 @@ const Description = (props) => {
       <div>
         {(props.less && !full) ? (
           <div className="description">{props.less}...
-            <ReadMore className='read-more' onClick={() => changeView(true)}>read more
-            </ReadMore>
+            <a className={styles.readMore} onClick={() => changeView(true)}>read more
+            </a>
           </div>
         ) : (
         <div className="description">{props.more}</div>

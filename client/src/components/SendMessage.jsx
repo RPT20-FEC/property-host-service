@@ -1,12 +1,9 @@
 import React from "react";
-
-import {
-  MessageStyle, Date, ContactTextarea, Message, ContactHost
-} from './styledComponents.jsx'
-import {
-   Name
-} from './HostPageStyles.jsx'
 import Modal from 'react-modal';
+import styles from '../styles/commonStyles.module.css';
+import messageStyles from '../styles/sendMessage.module.css';
+import hostStyles from '../styles/host.module.css';
+
 
 const customStyles = {
   content : {
@@ -18,7 +15,7 @@ const customStyles = {
     transform             : 'translate(-50%, -50%)'
   }
 };
-//Modal.setAppElement('#host');
+Modal.setAppElement('#host');
 
 
 
@@ -33,20 +30,20 @@ const SendMessage = (props) => {
   }
   return (
     <div>
-      <ContactHost className='contact-button' onClick={openModal} >Contact host</ContactHost>
+      <button className={messageStyles.sendMessage} onClick={openModal} >Contact host</button>
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
         style={customStyles}
       >
-        <MessageStyle>
-          <Name>Contact {props.name}</Name>
+        <div className={messageStyles.main}>
+          <div className={hostStyles.name}>Contact {props.name}</div>
           <div>{props.name} typically responds {props.responseTime}</div>
           <form>
-            <ContactTextarea type='text' placeholder="Your message here" rows="2" spellcheck="true"></ContactTextarea>
-            <Message type='submit' value='Send message' />
+            <input className={messageStyles.textArea} type='text' placeholder="Your message here" rows="2" spellCheck="true"></input>
+            <input className={messageStyles.message} type='submit' value='Send message' />
           </form>
-        </MessageStyle>
+        </div>
       </Modal>
     </div>
   )

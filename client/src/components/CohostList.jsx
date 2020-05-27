@@ -2,7 +2,7 @@ import React from "react";
 import CohostListEntry from './CohostListEntry.jsx';
 import { ajax } from 'jquery';
 import { useState, useEffect } from 'react';
-import styles from '../styles/commonStyles.css';
+import styles from '../styles/commonStyles.module.css';
 
 
 
@@ -13,7 +13,7 @@ const CohostList = (props) => {
 
   useEffect(() => {
     ajax({
-      url: 'http://54.215.154.186/hosts/' + props.id + '/co-hosts',
+      url: 'http://localhost:3001/hosts/' + props.id + '/co-hosts',
       type: 'GET',
       success: (data) => {
         console.log('got cohost data ', data)
@@ -29,7 +29,7 @@ const CohostList = (props) => {
   return (
     <div>
       <div className={styles.bold}> Co-hosts </div>
-        <div className='flex-container'>
+        <div className={styles.container}>
 
           {Array.from(cohosts).map(host =>
             <CohostListEntry host={host} key={host.id} propertyId={props.propertyId}/>
