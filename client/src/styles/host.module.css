@@ -29,7 +29,7 @@
   padding-bottom: 20px;
 }
 .mainStyles{
-  margin-top: 100px;
+  margin-top: 50px;
   display: flex;
   padding: 0px;
   display: flex;
@@ -52,6 +52,7 @@
 .name {
   font-size: 46px;
   line-height: 1.1304347826086956em;
+  padding-bottom: 0px;
 }
 
 .infoHost {
@@ -68,9 +69,9 @@
   padding-bottom: 5px;
 }
 .quote {
-  height: 60px;
-  color: #a79d9d;
-  font-size: 64px;
+  height: 45px;
+  padding-top: 10px;
+  padding-bottom: 0px;
 }
 .avatar {
   position:relative;

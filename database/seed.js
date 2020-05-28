@@ -49,7 +49,16 @@ const sampleData = [
   {
     id: 6,
     name: 'Christina',
-    description: '****in this time of the lockdown in our area, there are rumors that Airbnb may cancel or block. If my current guests need to reach me please save my phone number while the booking is active. If you missed it, you can search for me in an image search or social media. Christina Zima. My listings consist of the following: ** Homes that you rent for your exclusive use that have 1 to 7 bedrooms and can sleep up to 22 people ** Private bedrooms with en-suite bathroom in a communal home where you have access to a kitchen, living and laundry ** Private bedrooms with shared bathrooms in a communal home ** Private bedroom with a dedicated bathroom in a family home ** Beds in a hostel type room with shared bathrooms in a communal home ** Private bedroom for your group of 1-3 people ** Studios and backyard cottages for 2-4 people. WHO STAYS IN MY HOMES? The communal homes attract young techies and interns. They are not suitable for families or couples. The whole house rentals are more suitable for families or people travelling together for business.',
+    description: `****in this time of the lockdown in our area, there are rumors that Airbnb may cancel or block. If my current guests need to reach me please save my phone number while the booking is active. If you missed it, you can search for me in an image search or social media. Christina Zima. My listings consist of the following:
+    ** Homes that you rent for your exclusive use that have 1 to 7 bedrooms and can sleep up to 22 people
+    ** Private bedrooms with en-suite bathroom in a communal home where you have access to a kitchen, living and laundry
+    ** Private bedrooms with shared bathrooms in a communal home
+    ** Private bedroom with a dedicated bathroom in a family home
+    ** Beds in a hostel type room with shared bathrooms in a communal home
+    ** Private bedroom for your group of 1-3 people
+    ** Studios and backyard cottages for 2-4 people.
+    WHO STAYS IN MY HOMES?
+    The communal homes attract young techies and interns. They are not suitable for families or couples. The whole house rentals are more suitable for families or people travelling together for business.`,
     duringStay: 'We probably won\'t be stopping in, unless you want us to. Our team is friendly and extroverted and enjoys meeting our guests, but we don\'t want to impose. We are actually some of the long time, old school Airbnb supporters and love the whole idea of the shared economy. We are all excellent conversationalists and are happy to sit and share a bottle of wine, if you invite us to.',
     reviews: 1688,
     verified: true,
