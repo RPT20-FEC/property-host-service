@@ -93,10 +93,10 @@ padding-bottom: 0px;
 }
 .statsContainer {
   display: flex;
-
+  padding-bottom: 10px;
 }
 .desc {
-  padding-top: 20px;
+  padding-top: 5px;
 }
 .descText {
   white-space: pre-wrap;
