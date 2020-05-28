@@ -10,6 +10,9 @@
 .noteIcon {
   float: left;
 }
+.noteWarning {
+  line-height: normal;
+}
 
 .iconProfile {
   position: absolute;

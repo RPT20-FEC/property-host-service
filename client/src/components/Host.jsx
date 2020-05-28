@@ -40,7 +40,7 @@ const Host = (props) => (
         <SendMessage name={props.host.name} responseTime={props.host.responseTime} />
         <div className={hostStyles.note}>
           <img className={hostStyles.noteIcon} src='https://host-service.s3-us-west-1.amazonaws.com/paymentNote.png' />
-          <p className='payment-warning'>To protect your payment, never transfer money or communicate outside of the Airbnb website or app. </p>
+          <p className={hostStyles.noteWarning}>To protect your payment, never transfer money or communicate outside of the Airbnb website or app. </p>
         </div>
       </div>
     </div>
