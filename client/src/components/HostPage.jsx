@@ -42,16 +42,16 @@ const HostPage = (props) => {
       </div>
 
       <div className={hostStyles.statsData} >
-        <img className="star" src='https://host-service.s3-us-west-1.amazonaws.com/profile-reviews.png' /> {host.reviews} Reviews
+        <img className={hostStyles.star} src='https://host-service.s3-us-west-1.amazonaws.com/profile-reviews.png' /> {host.reviews} Reviews
       </div>
       {host.verified &&
         <div className={hostStyles.statsData} >
-          <img className="check" src='https://host-service.s3-us-west-1.amazonaws.com/profile-ver.PNG' /> Verified
+          <img className={hostStyles.check} src='https://host-service.s3-us-west-1.amazonaws.com/profile-ver.PNG' /> Verified
         </div>
       }
       {host.superhost &&
         <div className={hostStyles.statsData} >
-          <img className='superhost-stats' src='https://host-service.s3-us-west-1.amazonaws.com/icon-super-profile.png' /> Superhost
+          <img className={hostStyles.superhost-stats} src='https://host-service.s3-us-west-1.amazonaws.com/icon-super-profile.png' /> Superhost
         </div>
       }
 
