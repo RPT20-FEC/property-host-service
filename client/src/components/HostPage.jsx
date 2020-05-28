@@ -51,7 +51,7 @@ const HostPage = (props) => {
       }
       {host.superhost &&
         <div className={hostStyles.statsData} >
-          <img className={hostStyles.superhost-stats} src='https://host-service.s3-us-west-1.amazonaws.com/icon-super-profile.png' /> Superhost
+          <img className={hostStyles.superhostStats} src='https://host-service.s3-us-west-1.amazonaws.com/icon-super-profile.png' /> Superhost
         </div>
       }
 
