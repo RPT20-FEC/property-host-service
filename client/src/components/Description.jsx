@@ -8,7 +8,7 @@ const Description = (props) => {
     return (
       <div className={styles.desc}>
         {(props.less && !full) ? (
-          <div className={styles.descText}>{props.less}...
+          <div className={styles.descText}>{props.less}...&nbsp;
             <a className={styles.readMore} onClick={() => changeView(true)}>read more
             </a>
 
@@ -19,7 +19,7 @@ const Description = (props) => {
         </div>
         )}
         { (props.less && full) ? (
-          <div className={styles.descText}>{props.more}  
+          <div className={styles.descText}>{props.more}&nbsp;
           <a className={styles.readMore} onClick={() => changeView(false)}>read less
             </a>
           </div>
