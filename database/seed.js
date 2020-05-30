@@ -19,7 +19,8 @@ const sampleData = [
   {
     id: 1,
     name: 'Jen',
-    description: 'I got my PhD from Yale University and is currently working for top high tech company as a software engineer. I had lived both east and west coasts and is really impressed by thriving innovation here! <br>In my place, you can enjoy the privacy with a key-pad locked private room and also  having the opportunity to meet some of the most incredible people up to amazing things in Silicon Valley. My guests include software engineers, startup founders, investors, interns, students and other business professionals.',
+    description: `I got my PhD from Yale University and is currently working for top high tech company as a software engineer. I had lived both east and west coasts and is really impressed by thriving innovation here!
+    In my place, you can enjoy the privacy with a key-pad locked private room and also  having the opportunity to meet some of the most incredible people up to amazing things in Silicon Valley. My guests include software engineers, startup founders, investors, interns, students and other business professionals.`,
     reviews: 73,
     verified: true,
     superhost: true,

@@ -41,7 +41,7 @@ const SendMessage = (props) => {
           <div className={hostStyles.name}>Contact {props.name}</div>
           <div>{props.name} typically responds {props.responseTime}</div>
           <form>
-            <input className={messageStyles.textArea} type='text' placeholder="Your message here" rows="2" spellCheck="true"></input>
+            <textarea className={messageStyles.textArea} type='text' placeholder="Your message here" rows="4" cols="50" spellCheck="true"></textarea>
             <input className={messageStyles.message} type='submit' value='Send message' />
           </form>
         </div>
