@@ -3,7 +3,7 @@ import { shallow, mount, render } from 'enzyme';
 var moment = require('moment');
 
 import Host from '../client/src/components/Host';
-import styledComponents from '../client/src/components/styledComponents';
+
 
 const sampleData = require('../database/sampleData.js');
 
@@ -21,17 +21,17 @@ describe('Host component', function() {
     expect(wrapper.find('.resp-rate').text()).toEqual('Response rate: ' + sampleData.responseRate + '%');
     expect(wrapper.find('.resp-time').length).toBe(1);
     expect(wrapper.find('.resp-time').text()).toEqual('Response time: ' + sampleData.responseTime);
-    expect(wrapper.find('.contact-button').length).toBe(1);
-    expect(wrapper.find('.payment-warning').text()).toEqual('To protect your payment, never transfer money or communicate outside of the Airbnb website or app. ');
-    expect(wrapper.find('.payment-wrg-icon').length).toBe(1);
+    expect(wrapper.find('SendMessage').length).toBe(1);
+    expect(wrapper.find('.noteWarning').text()).toEqual('To protect your payment, never transfer money or communicate outside of the Airbnb website or app. ');
+    expect(wrapper.find('.noteIcon').length).toBe(1);
   });
 
   it('should not render during stay bold headline if the host does not have one', function() {
     let desc = sampleData.duringStay;
-    expect(wrapper.find('.during-stay-hdln').text()).toEqual('During your stay');
+    expect(wrapper.find('.headline-during-stay').text()).toMatch(/During your stay/);
     sampleData.duringStay = null;
     wrapper = shallow(<Host host={sampleData} />);
-    expect(wrapper.find('.during-stay-hdln').length).toBe(0);
+    expect(wrapper.find('.during-stay').length).toBe(0);
     sampleData.duringStay = desc;
   });
 

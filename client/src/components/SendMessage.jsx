@@ -16,7 +16,7 @@ const customStyles = {
     borderRadius          : '12px'
   }
 };
-Modal.setAppElement('#host');
+//Modal.setAppElement('#host');
 
 
 

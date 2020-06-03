@@ -12,7 +12,7 @@ describe('Server API tests', function() {
 
     expect(response.status).toBe(200);
     expect(response.body.length).toBeGreaterThanOrEqual(100);
-    expect(response.body[0].name).toBe('Graziella');
+    expect(response.body[0].name).toBe('Jen');
     expect(response.body[0].id).toBe(1);
     done();
   });
@@ -39,7 +39,7 @@ describe('Server API tests', function() {
     expect(response.body.name).toEqual("Tribe");
     done();
   });
-  
+
 });
 
 

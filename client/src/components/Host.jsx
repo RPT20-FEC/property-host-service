@@ -17,11 +17,11 @@ const Host = (props) => (
         <Stats superhost={props.host.superhost} reviews={props.host.reviews} verified={props.host.verified}/>
 
         <Description className='desc' less={props.host.descShort} more={props.host.description}/>
-        {props.host.coHost.length>0 &&
+        {(props.host.coHost && props.host.coHost.length>0) &&
           <CohostList id={props.host.id} propertyId={props.propertyId} />
         }
         {props.host.duringStay &&
-        <div>
+        <div className='headline-during-stay'>
           <div className= {styles.bold} >During your stay</div>
           <Description classname='during-stay' less={props.host.duringStayLess} more={props.host.duringStay}/>
         </div>
