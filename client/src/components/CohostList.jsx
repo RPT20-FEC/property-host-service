@@ -2,9 +2,7 @@ import React from "react";
 import CohostListEntry from './CohostListEntry.jsx';
 import { ajax } from 'jquery';
 import { useState, useEffect } from 'react';
-import {
-  Bold
-} from './styledComponents.jsx';
+import styles from '../styles/commonStyles.module.css';
 
 
 
@@ -30,8 +28,8 @@ const CohostList = (props) => {
 
   return (
     <div>
-      <Bold> Co-hosts </Bold>
-        <div className='flex-container'>
+      <div className={styles.bold}> Co-hosts </div>
+        <div className={styles.container}>
 
           {Array.from(cohosts).map(host =>
             <CohostListEntry host={host} key={host.id} propertyId={props.propertyId}/>

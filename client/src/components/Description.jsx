@@ -1,20 +1,31 @@
 import React, { useState } from 'react';
-import { ReadMore } from './styledComponents.jsx'
+import styles from '../styles/commonStyles.module.css';
 
 
 const Description = (props) => {
   const [full, changeView] = useState(false);
 
+
     return (
-      <div>
+      <div className={styles.desc}>
         {(props.less && !full) ? (
-          <div className="description">{props.less}...
-            <ReadMore className='read-more' onClick={() => changeView(true)}>read more
-            </ReadMore>
+          <div className={styles.descText}>{props.less}...&nbsp;
+            <a className={styles.readMore} onClick={() => changeView(true)}>read more
+            </a>
+
           </div>
         ) : (
-        <div className="description">{props.more}</div>
+        <div className={styles.descText}>{props.more}
+
+        </div>
         )}
+        {/* { (props.less && full) ? (
+          <div className={styles.descText}>{props.more}&nbsp;
+          <a className={styles.readMore} onClick={() => changeView(false)}>read less
+            </a>
+          </div>
+        ) : null
+        } */}
       </div>
   )
 }

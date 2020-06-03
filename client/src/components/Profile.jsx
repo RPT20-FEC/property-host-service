@@ -9,28 +9,26 @@ import HostPage from './HostPage.jsx';
 import App from './App.jsx';
 var moment = require('moment');
 
-
-import {
-  Avatar, Image, Icon, Title, Date, Name, Top
-} from './styledComponents.jsx';
+import styles from '../styles/commonStyles.module.css';
+import hostStyles from '../styles/host.module.css';
 
 
 const Profile = (props) => (
   <div>
-    <Top>
-      <Avatar>
-        <Link to={`${props.propertyId}/host-details/${props.host.id}`} target="_blank" >
-          <Image className='photo' src={props.host.avatarUrl} />
+    <div className={styles.top}>
+      <div className={styles.avatar} >
+        <Link to={`${props.propertyId}/host-details/${props.host.id}`} >
+          <img className={styles.image} src={props.host.avatarUrl} />
           {props.host.superhost &&
-          <Icon className='icon' src='https://host-service.s3-us-west-1.amazonaws.com/icon.png' />
+          <img className={styles.icon} src='https://host-service.s3-us-west-1.amazonaws.com/icon.png' />
           }
         </Link>
-      </Avatar>
-      <Title>
-        <Name className='host-name' >Hosted by {props.host.name}</Name>
-        <Date className='date-joined' >Joined in {moment(props.host.joined_at).format("MMMM YYYY")}</Date>
-      </Title>
-    </Top>
+      </div>
+      <div className={styles.title}>
+        <h2 className={styles.name} >Hosted by {props.host.name}</h2>
+        <div className={styles.date} >Joined in {moment(props.host.joined_at).format("MMMM YYYY")}</div>
+      </div>
+    </div>
   </div>
 )
 

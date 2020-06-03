@@ -3,27 +3,26 @@ import {
   Link
 } from "react-router-dom";
 
-import {
-  Info, Avatar, ImageSmall, IconSmall
-} from './styledComponents.jsx';
+import styles from '../styles/commonStyles.module.css';
+import cohostStyles from '../styles/coHost.module.css';
 
 
 
 
 const CohostListEntry = (props) => (
-  <Info>
-    <div className='flex-container'>
-      <Avatar>
-        <Link to={`${props.propertyId}/host-details/${props.host.id}`}>
-          <ImageSmall className='photo' src={props.host.avatarUrl} />
+  <div className={styles.info}>
+    <div className={styles.container}>
+      <div className={styles.avatar}>
+        <Link to={`${props.propertyId}/host-details/${props.host.id}`} >
+          <img className={cohostStyles.imageSmall} src={props.host.avatarUrl} />
           {props.host.superhost &&
-            <IconSmall className='icon' src='https://host-service.s3-us-west-1.amazonaws.com/icon.png' />
+            <img className={cohostStyles.iconSmall} src='https://host-service.s3-us-west-1.amazonaws.com/icon.png' />
           }
         </Link>
-      </Avatar>
-      <div className='cohostAv'>{props.host.name}</div>
+      </div>
+      <div className={cohostStyles.avatar}>{props.host.name}</div>
     </div>
-  </Info>
+  </div>
 )
 
 export default CohostListEntry;

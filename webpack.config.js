@@ -21,6 +21,25 @@ module.exports = {
           presets: ['@babel/preset-env', '@babel/preset-react']
         }
       },
+      {
+        test: /\.css$/,
+        include: SRC_DIR,
+        exclude: /node_modules/,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: {
+                mode: 'local',
+                exportGlobals: true,
+                localIdentName: '[name]__[local]--[hash:base64:5]',
+                hashPrefix: 'hash-that',
+              },
+            }
+          },
+        ],
+      },
     ]
   },
   plugins: [

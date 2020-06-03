@@ -5,12 +5,9 @@ import { useParams} from "react-router";
 import Profile from './Profile.jsx';
 var moment = require('moment');
 
-import {
-  Info, Avatar, Date
-} from './styledComponents.jsx';
-import {
-  IconProfile, ImageProfile, StatsData, MainStyles, Name, Info1, Quote
-} from './HostPageStyles.jsx';
+
+import styles from '../styles/commonStyles.module.css';
+import hostStyles from '../styles/host.module.css';
 
 const HostPage = (props) => {
 
@@ -34,40 +31,40 @@ const HostPage = (props) => {
 
   return (
 
-  <MainStyles className='flex-container host-details'>
-    <Info1>
-      <Avatar className='avatar'>
-        <ImageProfile className='photo' src={host.avatarUrl} />
+  <div className={hostStyles.mainStyles} >
+    <div className={hostStyles.infoHost}>
+      <div className={hostStyles.avatar}>
+        <img className={hostStyles.imageProfile}  src={host.avatarUrl} />
 
         {host.superhost &&
-          <IconProfile className='icon' src='https://host-service.s3-us-west-1.amazonaws.com/icon.png' />
+          <img className={hostStyles.iconProfile} src='https://host-service.s3-us-west-1.amazonaws.com/icon.png' />
         }
-      </Avatar>
+      </div>
 
-      <StatsData className='reviews'>
-        <img className="star" src='https://host-service.s3-us-west-1.amazonaws.com/profile-reviews.png' /> {host.reviews} Reviews
-      </StatsData>
+      <div className={hostStyles.statsData} >
+        <img className={hostStyles.star} src='https://host-service.s3-us-west-1.amazonaws.com/profile-reviews.png' /> {host.reviews} Reviews
+      </div>
       {host.verified &&
-        <StatsData className='verified'>
-          <img className="check" src='https://host-service.s3-us-west-1.amazonaws.com/profile-ver.PNG' /> Verified
-        </StatsData>
+        <div className={hostStyles.statsData} >
+          <img className={hostStyles.check} src='https://host-service.s3-us-west-1.amazonaws.com/profile-ver.PNG' /> Verified
+        </div>
       }
       {host.superhost &&
-        <StatsData className='superhost-stats-copy'>
-          <img className='superhost-stats' src='https://host-service.s3-us-west-1.amazonaws.com/icon-super-profile.png' /> Superhost
-        </StatsData>
+        <div className={hostStyles.statsData} >
+          <img className={hostStyles.superhostStats} src='https://host-service.s3-us-west-1.amazonaws.com/icon-super-profile.png' /> Superhost
+        </div>
       }
 
-    </Info1>
-    <Info className='desc-host-details'>
-      <Name className='host-name' >Hi, I'm {host.name}</Name>
-      <Date className='date-joined' >Joined in {moment(host.joined_at).format("MMMM YYYY")}</Date>
-      <Quote>"</Quote>
-      <div className='desc'>{host.description} </div>
+    </div>
+    <div className={hostStyles.descDetails} >
+      <div className={hostStyles.name}  >Hi, I'm {host.name}</div>
+      <div className={styles.date}  >Joined in {moment(host.joined_at).format("MMMM YYYY")}</div>
+      <img className={hostStyles.quote} src='https://host-service.s3-us-west-1.amazonaws.com/quote.jpg' />
+      <div className={styles.descText}>{host.description} </div>
       <div className='lang'><img src='https://host-service.s3-us-west-1.amazonaws.com/lang-icon.PNG'/>   Speaks {host.languages}</div>
       <div className='location'><img src='https://host-service.s3-us-west-1.amazonaws.com/loc--icon.png'/>   Lives in {host.location}</div>
-    </Info>
-  </MainStyles>
+    </div>
+  </div>
   )
 }
 

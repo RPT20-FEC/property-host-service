@@ -9,8 +9,7 @@ import {
 
 import Host from './Host.jsx';
 import HostPage from './HostPage.jsx';
-import SendMessage from './SendMessage.jsx';
-import {GlobalStyle} from './styledComponents.jsx';
+import styles from '../styles/commonStyles.module.css';
 
 
 class App extends React.Component {
@@ -25,7 +24,7 @@ class App extends React.Component {
     this.fetchData = this.fetchData.bind(this);
 
   }
-  
+
   componentDidMount(){
     this.fetchData(this.props.id);
   }
@@ -59,8 +58,7 @@ class App extends React.Component {
   render() {
 
     return (
-      <div className="main">
-        <GlobalStyle />
+      <div className={styles.hostService}>
         { this.state.host &&
 
         <Switch>
@@ -68,9 +66,7 @@ class App extends React.Component {
            <Host host={this.state.host} propertyId={this.props.id}/>
           </Route>
           <Route path='/:listingid/host-details/:id' component={HostPage}/>
-          <Route path='/:id/send-message'>
-            <SendMessage name={this.state.host.name} responseTime={this.state.host.responseTime} />
-          </Route>
+
         </Switch>
         }
       </div>
