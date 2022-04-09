@@ -24,7 +24,7 @@
     "express": "^4.17.1",
     "identity-obj-proxy": "^3.0.0",
     "jquery": "^3.5.0",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "moment-locales-webpack-plugin": "^1.2.0",
     "mongoose": "^5.9.9",
     "react": "^16.13.1",
